@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Navbars from "./components/Navbars";
+import Header from "./components/Header";
+import UserDetails from "./components/UserDetails";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <Header/>
+          </Col>
+        </Row>
+      </Container>
+      <Container className="m-auto">
+        <Row className="justify-content-md-center ">
+          <Col sm={12} lg="6">
+            <Navbars/>
+          </Col>
+        </Row>
+      </Container>
+      <Container className="m-auto">
+        <Row className="justify-content-md-center ">
+          <Col sm={12} lg="6">
+            <UserDetails/>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
-}
+};
 
 export default App;
